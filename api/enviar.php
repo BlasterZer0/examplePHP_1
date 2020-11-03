@@ -1,4 +1,5 @@
 <?php
+header( "Location: public/success.html" );
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -40,7 +41,6 @@ try {
     EOT;
 
     $mail->send();
-    header( "Location: public/success.html" );
 } catch (Exception $e) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
