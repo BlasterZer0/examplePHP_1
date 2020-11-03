@@ -18,11 +18,47 @@ try {
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
-    //Recipients
+    if ($mail->addAddress($_POST['Email'], $_POST['Name'])) {
+        $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = <<<EOT
+        {$_POST['Asunto']}
+        EOT;
+        $mail->Body = <<<EOT
+        {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
+        EOT;
+        $mail->send();
+        else if ($mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante')) {
+                $mail->addAddress($_POST['Email'], $_POST['Name']);
+                    //Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = <<<EOT
+                    {$_POST['Asunto']}
+                    EOT;
+                    $mail->Body = <<<EOT
+                    Nombre: {$_POST['Nombre']}
+                    <br>
+                    Correo electrónico: {$_POST['Email']}
+                    <br>
+                    Dirección: {$_POST['Direccion']}
+                    <br>
+                    Teléfono: {$_POST['Telefono']}
+                    <br>
+                    Descripción del problema: {$_POST['Descripcion']}
+                    EOT;
+                    $mail->send();
+        } catch (Exception $e) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+
+
+
+/*    //Recipients
     $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
     $mail->addAddress($_POST['Email'], $_POST['Name']);
- //   $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');     // Add a recipient
-
+    $mail->addBCC('mailsenderprojectgit@gmail.com');
+  
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = <<<EOT
@@ -39,11 +75,10 @@ try {
     <br>
     Descripción del problema: {$_POST['Descripcion']}
     EOT;
-
     $mail->send();
     header( "Location: /success.html" );
 } catch (Exception $e) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
-}
+}*/
 ?>
