@@ -13,8 +13,8 @@ $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
 $USER = $_ENV('USER');
 $PASSWORD = $_ENV('PASSWORD');
-echo ('USER');
-echo ('PASSWORD');
+echo ('$USER');
+echo ('$PASSWORD');
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -23,8 +23,8 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'USER';                 // SMTP username
-    $mail->Password = 'PASSWORD';                           // SMTP password
+    $mail->Username = '$USER';                 // SMTP username
+    $mail->Password = '$PASSWORD';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
