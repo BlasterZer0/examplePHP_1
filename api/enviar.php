@@ -13,6 +13,8 @@ $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
 $USER = $_ENV('USER');
 $PASSWORD = $_ENV('PASSWORD');
+echo ('USER');
+echo ('PASSWORD');
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
