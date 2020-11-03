@@ -8,6 +8,7 @@ require 'PHPMailer/src/SMTP.php';
 require 'phpdotenv/src/Dotenv.php';
 require 'phpdotenv/src/Validator.php';
 require 'phpdotenv/src/Repository/RepositoryBuilder.php';
+require 'phpdotenv/src/Repository/Adapter/ServerConstAdapter.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
