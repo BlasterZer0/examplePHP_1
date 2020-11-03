@@ -20,8 +20,9 @@ try {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');     // Add a recipient
+    $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+    $mail->addAddress($_POST['email'], $_POST['name'])
+ //   $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
