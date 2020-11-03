@@ -1,9 +1,8 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/", "dest": "/public/index.html" },
-    { "src": "/img/(.*)", "dest": "/public/img/" },
-    { "src": "/css/(.css)", "dest": "/public/css/" }
+    { "src": "/", "dest": "/public/index.html" }
+
   ],
   "functions": {
     "api/enviar.php": {
