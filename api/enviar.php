@@ -1,5 +1,5 @@
 <?php
-header( "Location: /public/success.html" );
+header( "Location: /success.html" );
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
