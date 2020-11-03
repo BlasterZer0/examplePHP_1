@@ -27,7 +27,7 @@ try {
         $mail->Body = <<<EOT
         {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
         EOT;
-        $mail->send($_POST['Email'], $_POST['Name'])); 
+        $mail->send($_POST['Email'], $_POST['Name']); 
         
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
