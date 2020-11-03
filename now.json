@@ -5,8 +5,7 @@
     { "src": "/public/**", "use": "@now/static"}
   ],
   "routes": [
-    { "src": "/r/(?<id>[^/]*)", "dest": "/api/index?r=$id" },
-    { "src": "/(.*)",  "dest": "/api/index.php" }
+    { "src": "/", "dest": "/public/index.html" }
   ],
   "functions": {
     "api/enviar.php": {
