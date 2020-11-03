@@ -40,7 +40,7 @@ try {
     EOT;
 
     $mail->send();
-    header( "Location: success.html" );
+    header( "Location: public/success.html" );
 } catch (Exception $e) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
