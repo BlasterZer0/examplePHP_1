@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds":[
+    { "src": "/api/enviar.php", "use": "@now/node"},
+    { "src": "/public/**", "use": "@now/static"}
+  ],
+  "routes": [
+    { "src": "/r/(?<id>[^/]*)", "dest": "/api/index?r=$id" },
+    { "src": "/(.*)",  "dest": "/api/index.php" }
+  ],
+  "functions": {
+    "api/enviar.php": {
+      "runtime": "now-php@0.0.10"
+    }
+  }
+}

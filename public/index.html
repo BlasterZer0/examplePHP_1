@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="css/slider.css">
+<link rel="stylesheet" href="css/banner.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin="">
+</script>      
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Compañia de<br>Ejemplo</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servicios</a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quiénes somos</a>
+    <a href="#clients" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Nuestros clientes</a>  
+    <a href="#proyects" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Proyectos</a>  
+    <a href="#map" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Oficina Principal</a> 
+    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contáctanos</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Compañia de Ejemplo</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:20px" id="home">
+    <div class="container">
+      <ul id="slider">
+        <li>
+          <img src="img/slider1.jpg" style="width:100%; height:100%">
+          <div class="centered">
+            <h1 class="w3-jumbo">Tecnología a tu alcance</h1>
+          </div>
+        </li>
+        <li>
+          <img src="img/slider2.jpg" style="width:100%; height:100%">
+          <div class="centered">
+            <h1 class="w3-jumbo">Siempre a tu servicio</h1>
+          </div>
+        </li>
+        <li>
+          <img src="img/slider3.jpg" style="width:100%; height:100%">
+          <div class="centered">
+            <h1 class="w3-jumbo">Trabajo profesional</h1>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+        // Slide every slideDelay seconds
+        const slideDelay = 6000;
+  
+        const dynamicSlider = document.getElementById("slider");
+  
+        var curSlide = 0;
+        window.setInterval(()=>{
+          curSlide++;
+          if (curSlide === dynamicSlider.childElementCount) {
+            curSlide = 0;
+          }
+  
+          // Actual slide
+          dynamicSlider.firstElementChild.style.setProperty("margin-left", "-" + curSlide + "00%");
+        }, slideDelay);
+    </script>
+  </div>
+  
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Servicios</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, assumenda. Ipsum illo at ut natus veritatis modi, voluptate iusto accusantium, et consectetur iure ipsam! Assumenda nam magnam ducimus quae alias?!</p>
+    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="about" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>¿Quienes somos?</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>El mejor equipo del mundo.</p>
+    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p><b>Nuestro equipo es especialmente seleccionado</b>:</p>
+  </div>
+
+    <!-- The Team -->
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="img/team2.jpg" alt="John" style="width:100%">
+          <div class="w3-container">
+            <h3>John Doe</h3>
+            <p class="w3-opacity">CEO & Fundador</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="img/team1.jpg" alt="Jane" style="width:100%">
+          <div class="w3-container">
+            <h3>Jane Doe</h3>
+            <p class="w3-opacity">Diseñador</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="img/team3.jpg" alt="Mike" style="width:100%">
+          <div class="w3-container">
+            <h3>Mike Ross</h3>
+            <p class="w3-opacity">Arquitecto</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div class="w3-container" style="margin-top:20px" id="clients">
+     <h1 class="w3-xxxlarge w3-text-red"><b>Sus testimonios</b></h1>
+     <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+    <!-- Testimonios -->
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="image-cropper">
+        <img src="img/client1.jpg" class="profile-pic">
+        </div>
+        <div class="center-text-pic">
+          <h3 style="text-align: center;">José Manuel</h3>
+        </div>
+        <div class="w3-light-grey">
+          <div class="w3-container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima pariatur, reiciendis voluptate odio in corporis nisi debitis fugit porro sed? Quo at ea adipisci, dolores sint omnis saepe reiciendis odit?.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="image-cropper">
+          <img src="img/client2.jpg" class="profile-pic">
+          </div>
+          <h3 style="text-align: center;">Beatriz Ponce</h3>
+        <div class="w3-light-grey">
+          <div class="w3-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere recusandae neque veniam repudiandae quos. Iste, sint quisquam, at distinctio provident culpa, eaque qui iusto doloremque mollitia pariatur? Cumque, enim accusamus..</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="image-cropper">
+          <img src="img/client3.jpg" class="profile-pic">
+          </div>
+          <h3 style="text-align: center;">Eduardo Martin</h3>
+        <div class="w3-light-grey">
+          <div class="w3-container">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio unde cumque impedit praesentium architecto earum libero eaque dolore! Accusantium tempore corrupti perferendis odit quae neque dolorem ipsum facere sequi consequuntur..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="w3-container" style="margin-top:20px" id="proyects">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Proyectos</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Galeria Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="img/1.webp" style="width:100%" onclick="onClick(this)">
+      <img src="img/2.webp" style="width:100%" onclick="onClick(this)">
+      <img src="img/3.webp" style="width:100%" onclick="onClick(this)">
+    </div>
+
+    <div class="w3-half">
+      <img src="img/4.jpg" style="width:100%" onclick="onClick(this)">
+      <img src="img/5.jpg" style="width:100%" onclick="onClick(this)">
+      <img src="img/6.jpg" style="width:100%" onclick="onClick(this)">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Mapa de Leafleet -->
+  <div class="w3-container" id="map" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Oficina Principal</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+<div id="mapid" style="width: 100%; height: 400px; position: relative; --darkreader-inline-outline:currentcolor; outline: currentcolor none medium;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" data-darkreader-inline-outline="">
+ <div class="leaflet-control-container">
+       <div class="leaflet-bottom leaflet-right">
+         <div class="leaflet-control-attribution leaflet-control">
+           <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>
+        </div>
+       </div>
+ </div>
+</div>
+
+<script>
+var mymap = L.map('mapid').setView([10.505058, -66.8980852], 19);
+var marker = L.marker([10.5049527, -66.8972716], 22).addTo(mymap);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYmxhc3RlcnoiLCJhIjoiY2tnemh6dTV4MDVsYzJ5cmlicnJ1aWpxMCJ9.5ZXHBPajHhQiabBH10zRiA'
+}).addTo(mymap);
+</script>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+  <div class="w3-right">
+  <p class="w3-right">Creado por Braulio Rojas</p>
+  <div class="w3-right">
+  <img src="img/facebook.png" class="center-text-pic2">
+  <img src="img/twitter.png" class="center-text-pic2">
+  <img src="img/instagram.png" class="center-text-pic2">
+  </div>
+  <p class="w3-right">
+    Dirección: Direccion: Caracas 1011, Distrito Capital
+    <br>
+    Horario de trabajo: 8:00AM a 5:00PM
+  </p>
+  </div>
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
