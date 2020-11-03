@@ -28,7 +28,7 @@ try {
         {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
         EOT;
         $mail->send($_POST['Email'], $_POST['Name']); 
-        
+        $mail->ClearAllRecipients();    
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
