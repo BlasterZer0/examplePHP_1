@@ -18,18 +18,18 @@ try {
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
-    if ($mail->addAddress($_POST['Email'], $_POST['Name'])) {
-        $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
-        $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = <<<EOT
+    $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+    $mail->addAddress($_POST['Email'], $_POST['Name']);
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = <<<EOT
         {$_POST['Asunto']}
         EOT;
         $mail->Body = <<<EOT
         {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
         EOT;
-        $mail->send();
-    }  
-        } catch (Exception $e) {
+        $mail->send(); 
+        
+    catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
     }
@@ -45,8 +45,8 @@ try {
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
-    if ($mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante')) {
-        $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+    $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+    $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = <<<EOT
@@ -65,7 +65,6 @@ try {
         EOT;
         $mail->send();
         header( "Location: /success.html" );
-}
 } catch (Exception $e) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
