@@ -28,7 +28,7 @@ try {
         {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
         EOT;
         $mail->send();
-        else if ($mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante')) {
+    }   else if ($mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante')) {
                 $mail->addAddress($_POST['Email'], $_POST['Name']);
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
