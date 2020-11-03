@@ -21,7 +21,7 @@ try {
 
     //Recipients
     $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
-    $mail->addAddress($_POST['email'], $_POST['name'])
+    $mail->addAddress($_POST['email'], $_POST['name']);
  //   $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');     // Add a recipient
 
     //Content
