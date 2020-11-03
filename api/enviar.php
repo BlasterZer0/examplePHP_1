@@ -27,7 +27,7 @@ try {
         $mail->Body = <<<EOT
         {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
         EOT;
-        $mail->send(); 
+        $mail->send($_POST['Email'], $_POST['Name'])); 
         
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
@@ -63,7 +63,7 @@ try {
         <br>
         Descripción del problema: {$_POST['Descripcion']}
         EOT;
-        $mail->send();
+        $mail->send('mailsenderprojectgit@gmail.com', 'Comprobante');
         header( "Location: /success.html" );
 } catch (Exception $e) {
     echo 'Message could not be sent.';
