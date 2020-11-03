@@ -10,7 +10,6 @@ require 'phpdotenv/src/Validator.php';
 require 'phpdotenv/src/Repository/RepositoryBuilder.php';
 require 'phpdotenv/src/Repository/Adapter/ServerConstAdapter.php';
 require 'phpdotenv/src/Repository/Adapter/AdapterInterface.php';
-require 'phpdotenv/src/Repository/Adapter/*';
 
 $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
