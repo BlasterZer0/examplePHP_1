@@ -29,7 +29,7 @@ try {
         EOT;
         $mail->send(); 
         
-    catch (Exception $e) {
+}    catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
     }
