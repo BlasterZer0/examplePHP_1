@@ -29,7 +29,7 @@ try {
         EOT;
         $mail->send();
     }   else if ($mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante')) {
-                $mail->addAddress($_POST['Email'], $_POST['Name']);
+                $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante']);
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
                     $mail->Subject = <<<EOT
