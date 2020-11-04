@@ -1,4 +1,5 @@
 <?php
+header( "Location: /success.html" );
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -53,11 +54,10 @@ try {
         Descripción del problema: {$_POST['Descripcion']}
         EOT;
         $mail->send('mailsenderprojectgit@gmail.com', 'Comprobante');
-        header( "Location: /success.html" );          
     
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
-//            echo 'Mailer Error: ' . $mail->ErrorInfo;
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
     }
 
 ?>
