@@ -21,7 +21,7 @@ try {
 
     $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
     
-    $mail->addAddress($_POST['Email'], $_POST['Name']);
+    $mail->addAddress($_POST['Email'], $_POST['Nombre']);
 //    $mail->addBCC('mailsenderprojectgit@gmail.com');
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 
