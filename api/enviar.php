@@ -53,7 +53,7 @@ try {
         <br>
         Descripción del problema: {$_POST['Descripcion']}
         EOT;
-        $mail->send('mailsenderprojectgit@gmail.com', 'Comprobante');
+        $mail->send();
     
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
