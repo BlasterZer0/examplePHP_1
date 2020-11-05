@@ -13,6 +13,8 @@ require __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
 $dotenv->load();
 
+$dotenv->required('GMAILUSER')->notEmpty();
+$dotenv->required('GMAILPASSWORD')->notEmpty();
 echo $_ENV['GMAILUSER'].PHP_EOL;
 echo $_SERVER['GMAILUSER'].PHP_EOL;
 echo $_ENV['GMAILPASSWORD'].PHP_EOL;
