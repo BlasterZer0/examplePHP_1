@@ -1,5 +1,5 @@
 <?php
-header( "Location: /success.html" );
+//header( "Location: /success.html" );
 
 require __DIR__ . '/vendor/autoload.php';
 
