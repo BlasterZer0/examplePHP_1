@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 require __DIR__ . '/../vendor/autoload.php';
 
 // Loading Dotenv
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
 $GMAILUSER = $_ENV['GMAILUSER'];
