@@ -11,6 +11,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // Loading Dotenv
 $dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
+$GMAILUSER = $_SERVER['GMAILUSER'];
+$GMAILPASSWORD = $_SERVER['GMAILPASSWORD'];
 $dotenv->load();
 
 $GMAILUSER = $_SERVER['GMAILUSER'];
