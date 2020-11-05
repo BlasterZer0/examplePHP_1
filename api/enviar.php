@@ -9,6 +9,18 @@ use PHPMailer\PHPMailer\Exception;
 // Load Composer's autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
+// Loading Dotenv
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$GMAILUSER = $_ENV['GMAILUSER'];
+$GMAILPASSWORD = $_ENV['GMAILPASSWORD'];
+
+echo ($GMAILUSER);
+echo ($GMAILPASSWORD);
+
+
+
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
