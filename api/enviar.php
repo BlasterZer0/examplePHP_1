@@ -18,6 +18,11 @@ $dotenv->load();
 $GMAILUSER = $_SERVER['GMAILUSER'];
 $GMAILPASSWORD = $_SERVER['GMAILPASSWORD'];
 
+function console_log( $GMAILUSER, $GMAILPASSWORD ){
+    echo '$GMAILUSER';
+    echo '$GMAILPASSWORD';
+  }
+
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
