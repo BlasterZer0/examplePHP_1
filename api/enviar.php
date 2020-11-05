@@ -1,7 +1,7 @@
 <?php
 //header( "Location: /success.html" );
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '../vendor/autoload.php';
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
