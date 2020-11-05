@@ -11,17 +11,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // Loading Dotenv
 $dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
-$GMAILUSER = $_SERVER['GMAILUSER'];
-$GMAILPASSWORD = $_SERVER['GMAILPASSWORD'];
 $dotenv->load();
 
-$GMAILUSER = $_SERVER['GMAILUSER'];
-$GMAILPASSWORD = $_SERVER['GMAILPASSWORD'];
-
-function console_log( $GMAILUSER, $GMAILPASSWORD ){
-    echo '$GMAILUSER';
-    echo '$GMAILPASSWORD';
-  }
+$_ENV['GMAILUSER'];
+$_SERVER['GMAILUSER'];
+$_ENV['GMAILPASSWORD'];
+$_SERVER['GMAILPASSWORD'];
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
