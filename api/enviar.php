@@ -1,13 +1,13 @@
 <?php
 //header( "Location: /success.html" );
+// Load Composer's autoloader
+require __DIR__ . '/../vendor/autoload.php';
+
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-// Load Composer's autoloader
-require __DIR__ . '/../vendor/autoload.php';
 
 // Loading Dotenv
 $dotenv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
@@ -17,6 +17,8 @@ echo $_ENV['GMAILUSER'].PHP_EOL;
 echo $_SERVER['GMAILUSER'].PHP_EOL;
 echo $_ENV['GMAILPASSWORD'].PHP_EOL;
 echo $_SERVER['GMAILPASSWORD'].PHP_EOL;
+$GMAILUSER = $_ENV['GMAILUSER'];
+$GMAILPASSWORD = $_ENV['GMAILPASSWORD'];
 $dotenv->required('GMAILUSER')->notEmpty();
 $dotenv->required('GMAILPASSWORD')->notEmpty();
 
