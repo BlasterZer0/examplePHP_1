@@ -22,6 +22,12 @@ $dotenv->required('GMAILPASSWORD')->notEmpty();
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
+    echo $_ENV['GMAILUSER'].PHP_EOL;
+echo $_SERVER['GMAILUSER'].PHP_EOL;
+echo $_ENV['GMAILPASSWORD'].PHP_EOL;
+echo $_SERVER['GMAILPASSWORD'].PHP_EOL;
+$dotenv->required('GMAILUSER')->notEmpty();
+$dotenv->required('GMAILPASSWORD')->notEmpty();
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
