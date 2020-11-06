@@ -4,7 +4,7 @@
     { "src": "/", "dest": "/public/index.html" }
   ],
   "functions": {
-    "api/enviar.php": {
+    "api/*.php": {
       "runtime": "now-php@0.0.10"
     }
   }
