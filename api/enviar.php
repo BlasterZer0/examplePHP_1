@@ -10,9 +10,8 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Loading Dotenv
-//$dotenv = Dotenv\Dotenv::createImmutable('../../');
-Dotenv\Dotenv::create(__DIR__)->load();
-//$dotenv->load();
+$dotenv = Dotenv\Dotenv::create('../../');
+$dotenv->load();
 
 var_dump($_ENV);
 
