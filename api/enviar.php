@@ -66,21 +66,22 @@ try {
         <br>
         Descripción del problema: {$_POST['Descripcion']}
 
-        $message  = "<html><body>";
+        <html>
+        <body>
    
-        $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+        <table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>
+
+        <tr><td>
         
-        $message .= "<tr><td>";
-        
-        $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+        <table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>
          
-        $message .= "<thead>
+        <thead>
            <tr height='80'>
             <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Programacion.net</th>
            </tr>
-           </thead>";
+        </thead>
          
-        $message .= "<tbody>
+        <tbody>
            <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
             <td style='background-color:#00a2d1; text-align:center;'><a href='http://programacion.net/articulos/c' style='color:#fff; text-decoration:none;'>C</a></td>
             <td style='background-color:#00a2d1; text-align:center;'><a href='http://programacion.net/articulos/php' style='color:#fff; text-decoration:none;'>PHP</a></td>
@@ -98,14 +99,14 @@ try {
             </td>
            </tr>
            
-           </tbody>";
+        </tbody>
          
-        $message .= "</table>";
+        </table>
         
-        $message .= "</td></tr>";
-        $message .= "</table>";
-        
-        $message .= "</body></html>";
+        </td></tr>
+        </table>
+    
+        </body></html>
 
         EOT;
         $mail->send();
