@@ -16,11 +16,9 @@ if(file_exists(".env")) {
     $dotenv->load();
 }
 
-var_dump($_ENV);
-echo ($_ENV['PG']);
-$GMAILUSER = $_ENV['GMAILUSER'];
-$GMAILPASSWORD = $_ENV['GMAILPASSWORD'];
-$dotenv->required(['GMAILUSER', 'GMAILPASSWORD'])->notEmpty();
+$USER = $_ENV['USER'];
+$PASS = $_ENV['PASS'];
+$dotenv->required(['USER', 'PASS'])->notEmpty();
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -29,8 +27,8 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = $GMAILUSER;                 // SMTP username
-    $mail->Password = $GMAILPASSWORD;                           // SMTP password
+    $mail->Username = $USER;                 // SMTP username
+    $mail->Password = $PASS;                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
