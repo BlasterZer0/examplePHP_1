@@ -16,6 +16,8 @@ if(file_exists(".env")) {
     $dotenv->load();
 }
 
+var_dump($_ENV);
+echo ($_ENV['PG']);
 $GMAILUSER = $_ENV['GMAILUSER'];
 $GMAILPASSWORD = $_ENV['GMAILPASSWORD'];
 $dotenv->required(['GMAILUSER', 'GMAILPASSWORD'])->notEmpty();
