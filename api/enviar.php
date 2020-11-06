@@ -18,24 +18,24 @@ if(file_exists(".env")) {
 
 $USER = $_ENV['USER'];
 $PASS = $_ENV['PASS'];
-$dotenv->required(['USER', 'PASS'])->notEmpty();
+$SMTP = $_ENV['SMTP'];
+$dotenv->required(['USER', 'PASS', 'SMTP'])->notEmpty();
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->Host = $SMTP;  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = $USER;                 // SMTP username
     $mail->Password = $PASS;                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
-    $mail->setFrom('mailsenderprojectgit@gmail.com', 'Comprobante');
+    $mail->setFrom($USER, 'Comprobante');
     
     $mail->addAddress($_POST['Email'], $_POST['Nombre']);
-//    $mail->addBCC('mailsenderprojectgit@gmail.com');
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 
           <<<EOT
@@ -49,7 +49,7 @@ try {
         
         $mail->ClearAllRecipients();
     
-        $mail->addAddress('mailsenderprojectgit@gmail.com', 'Comprobante');
+        $mail->addAddress($USER, 'Comprobante');
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = <<<EOT
