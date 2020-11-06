@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Loading Dotenv
-$dotenv = Dotenv\Dotenv::createImmutable((__DIR__ . '../'));
+$dotenv = Dotenv\Dotenv::createImmutable((__DIR__ . '../../'));
 $dotenv->load();
 
 $GMAILUSER = $_ENV['GMAILUSER'];
