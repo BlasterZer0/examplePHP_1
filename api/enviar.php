@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Loading Dotenv
 //$dotenv = Dotenv\Dotenv::createImmutable('../../');
-$dotenv = Dotenv\Dotenv::create(__DIR__)->load();
+Dotenv\Dotenv::create(__DIR__)->load();
 //$dotenv->load();
 
 var_dump($_ENV);
