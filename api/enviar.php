@@ -10,8 +10,11 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Loading Dotenv
-$dotenv = Dotenv\Dotenv::createImmutable('../../');
-$dotenv->load();
+//$dotenv = Dotenv\Dotenv::createImmutable('../../');
+$dotenv = Dotenv\Dotenv::create(__DIR__)->load();
+//$dotenv->load();
+
+var_dump($_ENV);
 
 $GMAILUSER = $_ENV['GMAILUSER'];
 $GMAILPASSWORD = $_ENV['GMAILPASSWORD'];
