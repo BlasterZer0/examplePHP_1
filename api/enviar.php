@@ -35,15 +35,13 @@ try {
 
     $mail->setFrom($USER, 'Comprobante');
     
-    $mail->addAddress($USER, $_POST['Email'], $_POST['Nombre']);
+    $mail->addAddress($_POST['Email'], $_POST['Nombre']);
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 
           <<<EOT
              {$_POST['Asunto']}
           EOT;
-          $mail->Body    = $message;
-          $mail->AltBody    = $message;
-/*        $mail->Body = 
+        $mail->Body = 
               <<<EOT
                  {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
               EOT;
@@ -68,46 +66,8 @@ try {
         <br>
         Descripción del problema: {$_POST['Descripcion']}
         EOT;
-        $mail->send();*/
+        $mail->send();
     
-           // HTML email starts here
-   
-   $message  = "<html><body>";
-   
-   $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
-   
-   $message .= "<tr><td>";
-   
-   $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
-    
-   $message .= "<thead>
-      <tr height='80'>
-       <th colspan='4' style='background-color:#f5f5f5; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#333; font-size:34px;' >Comprobante</th>
-      </tr>
-      </thead>";
-    
-   $message .= "<tbody>
-      <tr>
-       <td colspan='4' style='padding:15px;'>
-        <p style='font-size:20px;'>Hola ".$_POST['Nombre'].",</p>
-        <hr />
-        <p style='font-size:25px;'>Su mensaje ha sido enviado correctamente.</p>
-        <img src='/../public/img/check.png' alt='Check' style='height:auto; width:100%; max-width:100%;' />
-        <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>".$text_message.".</p>
-       </td>
-      </tr>
-      
-      </tbody>";
-    
-   $message .= "</table>";
-   
-   $message .= "</td></tr>";
-   $message .= "</table>";
-   
-   $message .= "</body></html>";
-   
-   // HTML email ends here
-
 }    catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
