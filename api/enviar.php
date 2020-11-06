@@ -41,6 +41,8 @@ try {
           <<<EOT
              {$_POST['Asunto']}
           EOT;
+          $mail->Body    = $message;
+          $mail->AltBody    = $message;
 /*        $mail->Body = 
               <<<EOT
                  {$_POST['Nombre']}, su mensaje ha sido enviado correctamente.
