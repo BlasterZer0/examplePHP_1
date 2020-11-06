@@ -13,7 +13,7 @@ use PHPMailer\PHPMailer\Exception;
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 
 if(file_exists(".env")) {
-    $dotenv->load(__DIR__);
+    $dotenv->load();
 }
 
 $GMAILUSER = $_ENV['GMAILUSER'];
