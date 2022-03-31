@@ -1,3 +1,7 @@
-# Pagina de Ejemplo con PHP
+# Pagina de Ejemplo con PHP 1
 
-examplephp-1.vercel.app
+Página web HTML y PHP
+
+- PHPMailer
+- Composer
+- Dotenv
